@@ -16,9 +16,11 @@ document.querySelector(".check").addEventListener("click",() => {
             document.body.style.backgroundColor ="#60b347";
             document.querySelector(".number").textContent = secretNumber;
             document.querySelector(".number").style.width = "30rem";
+            if(score > highScore) {
             let highScore = score;
             localStorage.setItem("high", score);
             document.querySelector(".highscore").textContent = localStorage.getItem("high");
+            }
         }
     } else if(guess < secretNumber) {
         if(score > 1) {
